@@ -1,0 +1,189 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  position:static;
+}
+
+a, a:visited, a:active, a:hover {
+    cursor:pointer;    
+    color:#fff;
+    text-decoration:none;
+}
+
+#top {
+    float:left;
+    width:100%;
+    padding:5px;
+    margin:0 0 20px 0;
+    background:#000;
+    box-sizing:border-box;
+
+}
+
+.home {
+    text-align:center;
+    top:0;
+    left:0;
+    font-size:0.8em;
+
+    margin:2px;
+}
+
+.home a {
+        border:1px solid #fff;
+    padding:2px;
+}
+.home a:hover {
+    opacity:0.6;
+}
+
+h1 {
+    text-transform:uppercase;
+    font-family: 'Quantico', sans-serif;    
+    font-size:4vw;
+    color:#fff;
+    padding:5px;
+    text-align:center;    
+}
+
+.symbols {
+    float:left;
+    width:100%;
+    color:#fff;
+    text-align:center;
+}
+#main {
+    float:left;
+    width:100%;
+    margin-top:0px;
+}
+
+#about {
+    display:none;
+    position:static;
+    margin:10px 0 0 0;
+    float:left;
+    width:100%;
+    background:#000;
+}
+
+.description {
+        display:block;
+        width:96%;
+        padding:0 2%;
+        color:#fff;
+        font-family:Arial, sans-serif;
+        font-size:0.9em;
+        font-style:italic;
+    }
+
+.description a {
+    color:#de72e8;
+}
+
+#canvas-container{
+    width:96%;
+    box-sizing:border-box;
+    display:block;
+    margin:0 auto;
+    padding:0;
+}
+
+.functions {
+    float:left;
+    font-family:'Quantico','sans-serif';
+    list-style-type:none;
+    padding:0;
+    margin:0 0 5px 0;
+    width:100%;
+    text-align:center;
+}
+
+.function-name {
+    display:none;
+}
+
+.functions li {
+    background:#de72e8;
+    color: #fff;
+    padding: 5px 10px;
+    margin:0 5px;
+    text-transform:uppercase;
+    display:inline-block;
+    font-size:4vw;
+}
+
+.functions li:hover, .functions li a:hover {
+    color:#222;
+    cursor:pointer;  
+}
+
+.gallery {
+    float:left;
+    width:100%;
+}
+
+.gallery img {
+float:left;
+width:50%;
+}
+
+@media (min-width:600px) {
+    
+    #canvas-container {
+        width:600px;
+        margin:0 auto;
+        float:none;
+        padding:0;
+
+    }
+    
+    h1 {
+        font-size:1.2em;
+    }
+    
+    .functions li {
+        font-size:.9em;
+    }
+}
+
+@media (min-width:900px) {
+  #top {
+      position:fixed;
+      width:200px;
+      height:100%;
+  }
+  
+  #main {
+      margin-left:250px;
+      padding-top:20px;
+      width:unset;
+  }
+  
+  .functions li {
+      display:block;
+      margin:10px 0;
+  }
+
+#about {
+    position:static;
+    display:block;
+    top:0;
+}
+
+.function-name {
+    display:initial;
+}
+
+.gallery img {
+width:25%;
+}
+
+#info {
+    display:none;
+}
+}
+

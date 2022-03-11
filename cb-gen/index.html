@@ -1,0 +1,65 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Coloring Book Generator</title>
+  <meta name="description" content="Coloring Book Generator">
+  <meta name="author" content="SitePoint">
+      <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quantico&display=swap">
+  
+  <script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js"></script>
+  <script src="cb1.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+
+<body onLoad="start()">
+    <div id="top">
+        <div class="home"><a href="https://owntckr.com">&larr; owntckr.com</a></div>
+      <h1>Coloring Book Generator (1.0)</h1>
+     <!-- <div class="symbols">&#9633; &#9653; &#9675;</div>-->
+        <ul class="functions">
+            <li onclick="start()"><span class="function-name">Rerun</span> ⟳</li>
+            <li><a id="download"><span class="function-name">Save</span> &darr;</a></li>
+           <!-- <li><a id="share"><span class="function-name">Share</span> &uarr;</a></li>            -->
+            <li><a id="gallery" href="gallery.html"><span class="function-name">Gallery</span> &#9707;</a></li>            
+            <li id="info"><span class="function-name">Info</span> ?</li>
+        </ul>
+        <div id="about">
+        <div class="description"><p>This Coloring Book Generator was made using <a href="https://processing.org/" target="_blank">Processing</a> and <a href="https://p5js.org/" target="_blank">p5.js</a>. It is a work in progress and I will be making changes/improvements when possible. Feel free to download as many designs as you would like. Print and color them, or color them digitally. Do what you want with them. If you have any comments or suggestions, <a href="mailto:owen@owntckr.com">email me</a>.</p></div>
+        </div>
+    </div>
+    <main id="main">
+    
+        <div id="canvas-container">    </div>
+
+    </main>
+
+    <script>
+var link = document.getElementById('download');
+link.addEventListener('click', function(ev) {
+    link.href = canvas.toDataURL();
+    link.download = "cbgen.png";
+}, false);
+</script>
+
+<script>
+    $("#info").click(function(){
+   $("#about").slideToggle('slow');
+}); 
+
+ $(window).resize(function() {
+if( $(window).width() > 899 ) {
+    $("#about").show();
+}
+});
+
+</script>
+
+</body>
+</html>
