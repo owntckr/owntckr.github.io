@@ -1,0 +1,110 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Maskmaker</title>
+  <meta name="description" content="Maskmaker generates printable designs for paper masks.">
+  <meta name="author" content="SitePoint">
+      <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quantico&display=swap">
+
+  <script src="p5.min.js"></script>
+  <script src="mask.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+
+<body onLoad="changeCanvas()">
+    <div id="top">
+        <div class="home"><a href="https://owntckr.com">&larr; owntckr.com</a></div>
+      <h1>Maskmaker</h1>
+      <div class="description options">
+        <form id="size">
+
+       </form>
+     </div>
+        <ul class="functions">
+            <li onclick="draw()"><span class="function-name">New</span> ⟳</li>
+            <a id="download"><li><span class="function-name">Save</span> &darr;</li></a>
+            <li id="info"><span class="function-name">Info</span> ?</li>
+        </ul>
+        <div id="about">
+          <div class="description">
+            <h2>Info</h2>
+            <p>Maskmaker generates printable designs for paper masks. It was made using <a href="https://p5js.org/" target="_blank">p5.js</a>.</p>
+            <p>The designs are meant to be printed on standard 8.5" x 11" paper. Use cardstock or thick paper if possible. You could also print on thin paper and then glue to something thicker. Large will be slightly less than 8.5" wide (depending on printer margins), and the center of the eye holes are approximately 2 inches apart from the middle of the design. Small fits my 4- and 6-year-old test subjects.</p>
+          </div>
+            <!--<div class="description">
+              <h2>Donate</h2>
+              <p></p></div>-->
+        <div class="description instructions">
+          <h2>Instructions</h2>
+          <ol style="padding:0 0 0 2em;">
+            <li>Select size. </li>
+            <li>Click <strong>New</strong> to run the program and generate a new design. Keep running as many times as you'd like.</li>
+            <li>Once you have generated a design that you want to use, click <strong>Save</strong>.</li>
+            <li>Optional: color digitally. Or go to next step.
+            <li>Print the image that downloads. </li>
+            <li>Color mask with your preferred coloring tools (paint, markers, colored pencils, crayons, etc.).</li>
+            <li>Cut out mask design. Don't forget the eyes.</li>
+            <li>Feel free to add embellishments.</li>
+            <li>Punch or cut out holes on the sides of the mask. If you have them, attach hole reinforcements.</li>
+            <li>Tie string (can be kite string, twine, shoelace, etc.) to each side. Adjust length for wearer's head.</li>
+            <li>Put on your mask!</li>
+            <li>Tag <a href="https://www.instagram.com/owntckr/" target="_blank">@owntckr</a> on any posted images. Or you can send images to <a href="mailto:owen@owntckr.com">owen@owntckr.com</a>.</li>
+          </ol>
+        </div>
+
+          <div class="description">
+            <h2>Copyright</h2>
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+          </div>
+        </div>
+    </div>
+    <main id="main">
+
+        <div id="canvas-container" style="width:100%;">    </div>
+
+    </main>
+
+    <script>
+var link = document.getElementById('download');
+link.addEventListener('click', function(ev) {
+    link.href = canvas.toDataURL();
+    link.download = "mask.png";
+}, false);
+</script>
+
+<script>
+    $("#info").click(function(){
+   $("#about").slideToggle('slow');
+});
+
+ $(window).resize(function() {
+if( $(window).width() > 899 ) {
+    $("#about").show();
+}
+});
+
+</script>
+
+<script>
+function changeCanvas() {
+  let w=innerWidth;
+  let c=document.getElementById("defaultCanvas0");
+  if(w<1200) {
+    c.style.width="100%";
+    c.style.height="100%";
+  } else {
+    c.style.width="900px";
+    c.style.height="900px";
+  }
+}
+</script>
+
+</body>
+</html>
